@@ -1,0 +1,29 @@
+name: Two Jobs with Action
+on: push
+jobs:
+    create_artifact:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Create a file
+          run: |
+            mkdir -p ~/artifact
+            echo "Dummy content" > ~/artifact/file.txt
+
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v2
+          with:
+            name: sample-artifact
+            path: ~/artifact
+    list_artifact:
+        needs: create_artifact
+        runs-on: ubuntu-latest
+        steps:
+        - name: Download Artifact
+          uses: actions/download-artifact@v2
+          with:
+            name: sample-artifact
+            path: ~/artifact
+
+        - name: List Artifact
+          run: ls -l ~/artifact
+            
