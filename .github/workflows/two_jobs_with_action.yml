@@ -10,7 +10,7 @@ jobs:
             echo "Dummy content" > ~/artifact/file.txt
 
         - name: Upload Artifact
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v3
           with:
             name: sample-artifact
             path: ~/artifact
@@ -19,7 +19,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Download Artifact
-          uses: actions/download-artifact@v2
+          uses: actions/download-artifact@v3
           with:
             name: sample-artifact
             path: ~/artifact
