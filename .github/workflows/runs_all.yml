@@ -1,0 +1,24 @@
+name: First example workflow
+on: push
+jobs:
+    build: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Run Build
+          run: echo "Running build..."
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Run Test
+          run: echo "Running tests..."
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+        - name: Run Deploy
+          run: echo "Running deploy..."
