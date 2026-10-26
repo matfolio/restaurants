@@ -1,0 +1,16 @@
+name: Two Jobs Workflow
+on: push
+jobs:
+    create_file:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Create a file
+          run: |
+            mkdir -p ~/artifact
+            echo "This is a file" > ~/artifact/file.txt
+    list_file:
+        needs: create_file
+        runs-on: ubuntu-latest
+        steps:
+        - name: List Artifact
+          run: ls -l ~/artifact
