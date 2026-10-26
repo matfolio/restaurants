@@ -3,26 +3,18 @@ package com.matfolio.restaurant.controller;
 import com.matfolio.restaurant.dto.RestaurantResponseDto;
 import com.matfolio.restaurant.model.Restaurant;
 import com.matfolio.restaurant.service.RestaurantService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/restaurants")
 public class RestaurantController {
     private final RestaurantService restaurantService;
-    private final HashMap<String, Restaurant> restaurants = new HashMap<>();
-    @Autowired
-    private CacheManager cacheManager;
     public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }

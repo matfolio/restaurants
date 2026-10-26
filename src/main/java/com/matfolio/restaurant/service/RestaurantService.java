@@ -3,7 +3,6 @@ package com.matfolio.restaurant.service;
 import com.matfolio.restaurant.dto.RestaurantResponseDto;
 import com.matfolio.restaurant.model.Restaurant;
 import com.matfolio.restaurant.repository.RestaurantRepository;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

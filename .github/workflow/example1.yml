@@ -1,0 +1,11 @@
+name: First example workflow
+on: push
+jobs:
+  first_job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Welcome message
+        run: echo "Hello, world!"
