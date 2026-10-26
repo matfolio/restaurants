@@ -12,5 +12,5 @@ jobs:
 
       - name: Run script
         run: | 
-          chmod +x script_runner.sh
-          ./script_runner.sh
+          chmod +x .github/workflows/script_runner.sh
+          .github/workflows/script_runner.sh
