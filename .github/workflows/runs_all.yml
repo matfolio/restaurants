@@ -1,4 +1,4 @@
-name: First example workflow
+name: Script runner for multiple jobs
 on: push
 jobs:
     build: 
