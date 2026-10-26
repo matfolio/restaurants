@@ -1,0 +1,16 @@
+name: Example2 workflow
+on: push
+jobs:
+  script_runner_job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List all files
+        run: ls -la
+
+      - name: Run script
+        run: | 
+          chmod +x script_runner.sh
+          ./script_runner.sh
