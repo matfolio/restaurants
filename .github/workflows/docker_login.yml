@@ -12,5 +12,5 @@ jobs:
           env:
             DOCKERHUB_USERNAME: matfoliomatty
           with:
-            username: ${{ env.DOCKERHUB_USERNAME }}
+            username: $DOCKERHUB_USERNAME
             password: ${{ secrets.DOCKERHUB_PASSWORD }}
