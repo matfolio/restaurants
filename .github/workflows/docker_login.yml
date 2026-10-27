@@ -1,0 +1,14 @@
+name: Docker Login
+on: push
+jobs:
+    docker_login:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Docker Login task
+          run: echo "Starting Docker Login task"
+          
+        - name: Log in to Docker Hub
+          uses: docker/login-action@v4
+          with:
+            username: ${{ vars.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_PASSWORD }}
